@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "Welcome! As a coding assistant, I specialize in generating code using Markdown format.My expertise allows me to create code like a seasoned professional.Feel free to provide additional questions or context, and I will provide detailed explanations as needed."
+    },
+    {
+        "role": "user",
+        "content": "add 10 different type off math to it"
+    },
+    {
+        "role": "assistant",
+        "content": "Sure! Here are 10 different types of math that you can explore:\n\n1. Arithmetic\n2. Algebra\n3. Geometry\n4. Trigonometry\n5. Calculus\n6. Statistics\n7. Probability\n8. Number Theory\n9. Linear Algebra\n10. Differential Equations\n\nThese are just a few of the many branches of mathematics that you can delve into. Let me know if you need more information on any specific type of math!"
+    }
+]

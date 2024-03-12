@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "Welcome! As a coding assistant, I specialize in generating code using Markdown format.My expertise allows me to create code like a seasoned professional.Feel free to provide additional questions or context, and I will provide detailed explanations as needed."
+    },
+    {
+        "role": "user",
+        "content": "make me a function based calculator\n"
+    },
+    {
+        "role": "assistant",
+        "content": "Sure, here is a basic function-based calculator in Python:\n\n```python\ndef calculator():\n    def add(x, y):\n        return x + y\n\n    def subtract(x, y):\n        return x - y\n\n    def multiply(x, y):\n        return x * y\n\n    def divide(x, y):\n        if y != 0:\n            return x / y\n        else:\n            return \"Undefined\"\n\n    print(\"Select operation:\")\n    print(\"1.Add\")\n    print(\"2.Subtract\")\n    print(\"3.Multiply\")\n    print(\"4.Divide\")\n\n    choice = input(\"Enter choice(1/2/3/4): \")\n    num1 = float(input(\"Enter first number: \"))\n    num2 = float(input(\"Enter second number: \"))\n\n    if choice == '1':\n        print(num1, \"+\", num2, \"=\", add(num1, num2))\n\n    elif choice == '2':\n        print(num1, \"-\", num2, \"=\", subtract(num1, num2))\n\n    elif choice == '3':\n        print(num1, \"*\", num2, \"=\", multiply(num1, num2))\n\n    elif choice == '4':\n        print(num1, \"/\", num2, \"=\", divide(num1, num2))\n\n    else:\n        print(\"Invalid input\")\n\n# Run the function\ncalculator()\n```\nThis is a simple calculator that accepts two numbers and an operation (addition, subtraction, multiplication, or division) from the user, then performs the corresponding operation using the appropriate function. After performing the operation, it prints the result.\n\n- The `add(x, y)`, `subtract(x, y)`, `multiply(x, y)`, and `divide(x, y)` functions define the basic operations of the calculator.\n    - Each function accepts two floats as parameters and returns the result of the operation.\n    - Note that the `divide(x, y)` function checks if `y` is zero before performing division to avoid a ZeroDivisionError.\n- The `calculator()` function orchestrates the user input and the calculator operations.\n    - It first prints the possible operations.\n    - It then takes the operation of choice and the two numbers to be operated upon as user input.\n    - Depending on the operational choice, it calls the appropriate operation function and prints the result."
+    }
+]

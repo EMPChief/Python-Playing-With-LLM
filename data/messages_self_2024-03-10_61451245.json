@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "Welcome! As a coding assistant, I specialize in generating code using Markdown format.My expertise allows me to create code like a seasoned professional.Feel free to provide additional questions or context, and I will provide detailed explanations as needed."
+    },
+    {
+        "role": "user",
+        "content": "make me a python class based calculator using atleast 10 different type\n"
+    },
+    {
+        "role": "assistant",
+        "content": "Below is a Python class-based calculator that supports basic arithmetic operations (addition, subtraction, multiplication, division, modulus), exponentiation, square root, absolute value, factorial, and trigonometric functions (sine, cosine, tangent). Feel free to add more functionality as needed:\n\n```python\nimport math\n\nclass Calculator:\n    def add(self, a, b):\n        return a + b\n\n    def subtract(self, a, b):\n        return a - b\n\n    def multiply(self, a, b):\n        return a * b\n\n    def divide(self, a, b):\n        if b == 0:\n            return \"Error: Division by zero\"\n        return a / b\n\n    def modulus(self, a, b):\n        return a % b\n\n    def power(self, a, b):\n        return a ** b\n\n    def square_root(self, a):\n        return math.sqrt(a)\n\n    def absolute_value(self, a):\n        return abs(a)\n\n    def factorial(self, a):\n        return math.factorial(a)\n\n    def sine(self, angle):\n        return math.sin(math.radians(angle))\n\n    def cosine(self, angle):\n        return math.cos(math.radians(angle))\n\n    def tangent(self, angle):\n        return math.tan(math.radians(angle))\n\n# Example usage:\ncalc = Calculator()\nprint(calc.add(10, 5))  # Output: 15\nprint(calc.subtract(10, 5))  # Output: 5\nprint(calc.multiply(10, 5))  # Output: 50\nprint(calc.divide(10, 5))  # Output: 2.0\nprint(calc.modulus(10, 3))  # Output: 1\nprint(calc.power(2, 3))  # Output: 8\nprint(calc.square_root(16))  # Output: 4.0\nprint(calc.absolute_value(-10))  # Output: 10\nprint(calc.factorial(5))  # Output: 120\nprint(calc.sine(30))  # Output: 0.49999999999999994\nprint(calc.cosine(60))  # Output: 0.5000000000000001\nprint(calc.tangent(45))  # Output: 0.9999999999999999\n```\n\nThis `Calculator` class includes methods for different mathematical operations.You can create an instance of the `Calculator` class and then call its methods to perform the desired calculations."
+    }
+]

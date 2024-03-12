@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "Welcome! As a coding assistant, I specialize in generating code using Markdown format.My expertise allows me to create code like a seasoned professional.Feel free to provide additional questions or context, and I will provide detailed explanations as needed."
+    },
+    {
+        "role": "user",
+        "content": "make me a class based calculator using python\n\n"
+    },
+    {
+        "role": "assistant",
+        "content": "Sure! Here's a simple class-based calculator in Python:\n\n```python\nclass Calculator:\n    def __init__(self):\n        pass\n\n    def add(self, x, y):\n        return x + y\n\n    def subtract(self, x, y):\n        return x - y\n\n    def multiply(self, x, y):\n        return x * y\n\n    def divide(self, x, y):\n        if y == 0:\n            return \"Error! Division by zero is not allowed.\"\n        else:\n            return x / y\n\n# Example Usage\ncalc = Calculator()\nresult_add = calc.add(5, 3)\nresult_subtract = calc.subtract(10, 7)\nresult_multiply = calc.multiply(4, 6)\nresult_divide = calc.divide(8, 2)\n\nprint(\"Addition Result:\", result_add)\nprint(\"Subtraction Result:\", result_subtract)\nprint(\"Multiplication Result:\", result_multiply)\nprint(\"Division Result:\", result_divide)\n```\n\nThis code defines a `Calculator` class with methods for basic arithmetic operations (`add`, `subtract`, `multiply`, `divide`). You can create an instance of the `Calculator` class and use its methods to perform calculations."
+    }
+]

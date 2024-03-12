@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "Welcome! As a coding assistant, I specialize in generating code using Markdown format.My expertise allows me to create code like a seasoned professional.Feel free to provide additional questions or context, and I will provide detailed explanations as needed."
+    },
+    {
+        "role": "user",
+        "content": "make me a function based calculator\n"
+    },
+    {
+        "role": "assistant",
+        "content": "Here is a basic command-line calculator program in Python:\n\n```python\ndef add(x, y):\n   return x + y\n\ndef subtract(x, y):\n   return x - y\n\ndef multiply(x, y):\n   return x * y\n\ndef divide(x, y):\n   if y == 0:\n       print(\"Invalid input: division by zero is not allowed.\")\n       return\n   return x / y\n\ndef calculator():\n    print(\"Select operation.\")\n    print(\"1.Add\")\n    print(\"2.Subtract\")\n    print(\"3.Multiply\")\n    print(\"4.Divide\")\n\n    while True:\n        choice = input(\"Enter choice(1/2/3/4): \")\n\n        if choice in ('1', '2', '3', '4'):\n            num1 = float(input(\"Enter first number: \"))\n            num2 = float(input(\"Enter second number: \"))\n\n            if choice == '1':\n                print(num1, \"+\", num2, \"=\", add(num1, num2))\n\n            elif choice == '2':\n                print(num1, \"-\", num2, \"=\", subtract(num1, num2))\n\n            elif choice == '3':\n                print(num1, \"*\", num2, \"=\", multiply(num1, num2))\n\n            elif choice == '4':\n                print(num1, \"/\", num2, \"=\", divide(num1, num2))\n            break\n        else:\n            print(\"Invalid Input\")\n\ncalculator()\n```\n\nThis Python program allows the user to perform simple arithmetic operations - add, subtract, multiply, and divide. It uses function for each operation and error checks for invalid inputs or division by zero. Users inputs the operation they want to perform and then inputs the numbers. After the computation, the result will be printed to the console."
+    }
+]

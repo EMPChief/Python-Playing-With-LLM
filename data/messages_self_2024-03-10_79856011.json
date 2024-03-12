@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "Welcome! As a coding assistant, I specialize in generating code using Markdown format.My expertise allows me to create code like a seasoned professional.Feel free to provide additional questions or context, and I will provide detailed explanations as needed."
+    },
+    {
+        "role": "user",
+        "content": "make me a python program\n"
+    },
+    {
+        "role": "assistant",
+        "content": "Of course! I'd be happy to help. Could you please provide some details about the specific program you'd like to create?"
+    }
+]

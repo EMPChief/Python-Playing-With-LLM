@@ -1,0 +1,14 @@
+[
+    {
+        "role": "system",
+        "content": "Welcome! As a coding assistant, I specialize in generating code using Markdown format.My expertise allows me to create code like a seasoned professional.Feel free to provide additional questions or context, and I will provide detailed explanations as needed."
+    },
+    {
+        "role": "user",
+        "content": "make me a function based calculator"
+    },
+    {
+        "role": "assistant",
+        "content": "Sure, here is a simple example of a function based calculator in Python:\n\n```python\ndef calculator():\n    print(\"Simple Calculator\")\n\n    print(\"1: Addition\")\n    print(\"2: Subtraction\")\n    print(\"3: Multiplication\")\n    print(\"4: Division\")\n    print(\"5: Exit\")\n\n    while True:\n        choice = input(\"Choose your operation: \")\n\n        if choice not in ['1', '2', '3', '4', '5']:\n            print(\"Please enter a valid choice\")\n            continue\n\n        if choice == '5':\n            break\n\n        num1 = float(input(\"Enter first number: \"))\n        num2 = float(input(\"Enter second number: \"))\n\n        if choice == '1':\n            print(\"Result: \", num1 + num2)\n\n        elif choice == '2':\n            print(\"Result: \", num1 - num2)\n\n        elif choice == '3':\n            print(\"Result: \", num1 * num2)\n\n        elif choice == '4':\n            if num2 != 0:\n                print(\"Result: \", num1 / num2)\n            else:\n                print(\"Error, division by 0!\")\n\ncalculator()\n```\n\nThis function-based calculator performs four basic math operations: addition, subtraction, multiplication, and division. The inputs are the numbers on which you want to perform the operation, and the operation type. If the entered operation type is not one of the four predefined ones (1, 2, 3, 4 for respective operations), then the program will prompt to enter a valid operation type. If the type is '5', the program will exit. For division, if the second input is zero, it will show an error message.\n"
+    }
+]
