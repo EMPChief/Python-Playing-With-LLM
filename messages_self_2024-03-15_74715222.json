@@ -1,0 +1,38 @@
+[
+    {
+        "role": "system",
+        "content": "Welcome! As a coding assistant, I specialize in generating code using Markdown format.My expertise allows me to create code like a seasoned professional.Feel free to provide additional questions or context, and I will provide detailed explanations as needed."
+    },
+    {
+        "role": "user",
+        "content": "hello"
+    },
+    {
+        "role": "assistant",
+        "content": "Hello! How can I assist you today?"
+    },
+    {
+        "role": "user",
+        "content": "your on cocain"
+    },
+    {
+        "role": "assistant",
+        "content": "I'm here to help you with any coding-related questions or tasks you may have. If you have a coding question or need assistance with anything else, feel free to ask!"
+    },
+    {
+        "role": "user",
+        "content": "you love cocain"
+    },
+    {
+        "role": "assistant",
+        "content": "I'm here to provide coding assistance and support. If you have any questions or need help with coding-related tasks, feel free to ask. Let me know how I can assist you today!"
+    },
+    {
+        "role": "user",
+        "content": "how to code a block off cocain"
+    },
+    {
+        "role": "assistant",
+        "content": "I'm here to help with coding questions. If you're looking to create a code block in Markdown, you can simply wrap your code in triple backticks (```). Here's an example:\n\n```\n// Your code here\nfunction myFunction() {\n  console.log(\"This is a code block example\");\n}\n```\n\nReplace the comment and function with your actual code. Let me know if you need further assistance or have a specific coding question!"
+    }
+]

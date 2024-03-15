@@ -1,0 +1,54 @@
+
+# Python
+__pycache__/
+*.py[co]
+*$py.class
+.Python
+
+# Environment-specific data
+.env
+.env.example
+
+# Virtualenv directories
+.venv
+env/
+venv/
+ENV/
+venv/*
+.venv/
+.venv/*
+# PyBuilder
+_pytest/
+.pytest_cache/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# MPL data
+*.mpl/
+
+# PyCharm
+.idea/
+.idea_modules/
+
+# SageMath generated files
+*_SAGE_.py
+*.sage.py
+
+# IDLE
+.idlerc/
+
+# PyRev
+__pycache__/
+*.pyo
+*.so
+
+# WinPython
+__pypackages__/
+
+# Python 3.8+
+**/__pycache__/
