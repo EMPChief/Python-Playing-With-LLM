@@ -7,5 +7,5 @@ numpy
 matplotlib
 seaborn
 python-dotenv
-
+pyqt6
 
