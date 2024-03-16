@@ -29,7 +29,10 @@ class ChatBot:
         response = self.client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=self.messages,
+            temperature=0.5,
+            
         )
+        
         self.add_assistant_message(response.choices[0].message.content)
         return response.choices[0].message.content
         
