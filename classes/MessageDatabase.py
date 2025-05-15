@@ -8,6 +8,7 @@ class MessageDatabase:
         self.db_path = db_path
         self.table_name = "messages"
         self._ensure_table_exists()
+        self._migrate_database()
     
     @contextmanager
     def _get_connection(self):
@@ -26,8 +27,7 @@ class MessageDatabase:
                 created_at TEXT NOT NULL,
                 role TEXT NOT NULL,
                 username TEXT,
-                content TEXT NOT NULL,
-                metadata TEXT
+                content TEXT NOT NULL
             )
         '''
         
@@ -35,6 +35,24 @@ class MessageDatabase:
             cursor = conn.cursor()
             cursor.execute(create_table_sql)
             conn.commit()
+    
+    def _migrate_database(self) -> None:
+        """Handles database migrations to add new columns if needed."""
+        try:
+            with self._get_connection() as conn:
+                cursor = conn.cursor()
+                
+                # Check if metadata column exists
+                cursor.execute(f"PRAGMA table_info({self.table_name})")
+                columns = [column[1] for column in cursor.fetchall()]
+                
+                # Add metadata column if it doesn't exist
+                if 'metadata' not in columns:
+                    cursor.execute(f"ALTER TABLE {self.table_name} ADD COLUMN metadata TEXT")
+                    conn.commit()
+                    print("Added metadata column to messages table")
+        except Exception as e:
+            print(f"Error during database migration: {e}")
     
     def add_message(self, role: str, content: str, username: Optional[str] = None, metadata: Optional[Dict] = None) -> bool:
         """

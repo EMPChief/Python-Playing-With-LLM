@@ -4,14 +4,11 @@ from PyQt6.QtWidgets import (
 )
 from PyQt6.QtCore import Qt, QTimer
 from PyQt6.QtGui import QAction
-import dotenv
 from datetime import datetime
 import json
 from .MessageDatabase import MessageDatabase
 from .ChatBot import ChatBot
 from .styles import STYLES, get_dark_palette
-
-dotenv.load_dotenv()
 
 class ChatBotWindow(QMainWindow):
     def __init__(self):
@@ -53,6 +50,7 @@ class ChatBotWindow(QMainWindow):
         self.chat_area = QTextEdit()
         self.chat_area.setReadOnly(True)
         self.chat_area.setStyleSheet(STYLES["chat_area"])
+        self.chat_area.setAcceptRichText(True)
         layout.addWidget(self.chat_area)
         
         # Progress bar
@@ -117,15 +115,38 @@ class ChatBotWindow(QMainWindow):
             self.progress_bar.setVisible(False)
             self.send_button.setEnabled(True)
     
+    def format_message(self, role: str, content: str, timestamp: str) -> str:
+        """Format a message using HTML templates from styles."""
+        # Replace code blocks with styled pre tags
+        if "```" in content:
+            parts = content.split("```")
+            for i in range(1, len(parts), 2):
+                if i < len(parts):
+                    code = parts[i].strip()
+                    parts[i] = f'<pre style="background-color: #1E1E1E; padding: 10px; border-radius: 5px; font-family: monospace;">{code}</pre>'
+            content = "".join(parts)
+        else:
+            # Replace newlines with <br> for non-code content
+            content = content.replace("\n", "<br>")
+        
+        # Get the appropriate message style template
+        template = STYLES["message_styles"][role]
+        
+        # Replace placeholders with actual content
+        return template.replace("%time%", timestamp).replace("%content%", content)
+    
     def add_message_to_ui(self, role, content):
         timestamp = datetime.now().strftime("%H:%M:%S")
-        formatted_message = f"[{timestamp}] {role.capitalize()}:\n{content}\n"
+        
+        # Format message with HTML
+        formatted_message = self.format_message(role, content, timestamp)
         
         # Store in database
         self.message_db.add_message(role=role, content=content)
         
         # Add to UI
         self.chat_area.append(formatted_message)
+        
         # Scroll to bottom
         scrollbar = self.chat_area.verticalScrollBar()
         scrollbar.setValue(scrollbar.maximum())
@@ -136,7 +157,9 @@ class ChatBotWindow(QMainWindow):
             for message in messages:
                 role = message[2]
                 content = message[4]
-                self.add_message_to_ui(role=role, content=content)
+                timestamp = datetime.fromisoformat(message[1]).strftime("%H:%M:%S")
+                formatted_message = self.format_message(role, content, timestamp)
+                self.chat_area.append(formatted_message)
         except Exception as e:
             self.show_error("Error", f"Failed to load messages: {str(e)}")
     

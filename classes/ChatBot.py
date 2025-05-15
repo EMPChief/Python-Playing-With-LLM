@@ -1,12 +1,9 @@
-import dotenv
 from openai import OpenAI
 import os
 import textwrap
 import json
 from typing import List, Dict, Optional, Union
 from .MessageDatabase import MessageDatabase
-
-dotenv.load_dotenv()
 
 class ChatBotConfig:
     """Configuration class for ChatBot settings."""

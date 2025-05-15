@@ -1,11 +1,16 @@
-openai
-pandas
-streamlit
-fastapi
-flask
-numpy
-matplotlib
-seaborn
-python-dotenv
-pyqt6
+# Core dependencies
+openai>=1.12.0
+PyQt6>=6.6.1
+python-dotenv>=1.0.0
+
+# Utilities
+pandas>=2.2.0
+numpy>=1.26.0
+
+# Optional - for future features
+streamlit>=1.32.0
+fastapi>=0.110.0
+flask>=3.0.0
+matplotlib>=3.8.0
+seaborn>=0.13.0
 

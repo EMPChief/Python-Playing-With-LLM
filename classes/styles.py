@@ -17,13 +17,17 @@ def get_dark_palette():
     palette.setColor(QPalette.ColorRole.HighlightedText, Qt.GlobalColor.black)
     return palette
 
+# Message colors
+USER_MSG_BG = "#2C3E50"  # Dark blue-gray
+ASSISTANT_MSG_BG = "#2D4263"  # Dark purple-blue
+
 STYLES = {
     "chat_area": """
         QTextEdit {
             border: 1px solid #555;
             border-radius: 4px;
             padding: 8px;
-            background-color: #2b2b2b;
+            background-color: #1E1E1E;
             color: #ffffff;
             font-size: 14px;
         }
@@ -69,5 +73,33 @@ STYLES = {
         QPushButton:pressed {
             background-color: #a52834;
         }
-    """
+    """,
+    "message_styles": {
+        "user": f"""
+            <div style='
+                background-color: {USER_MSG_BG};
+                border-radius: 10px;
+                padding: 10px;
+                margin: 5px 0;
+                margin-left: 20%;
+                margin-right: 5px;
+            '>
+            <span style='color: #888; font-size: 12px;'>[%time%] User:</span><br>
+            %content%
+            </div>
+        """,
+        "assistant": f"""
+            <div style='
+                background-color: {ASSISTANT_MSG_BG};
+                border-radius: 10px;
+                padding: 10px;
+                margin: 5px 0;
+                margin-right: 20%;
+                margin-left: 5px;
+            '>
+            <span style='color: #888; font-size: 12px;'>[%time%] Assistant:</span><br>
+            %content%
+            </div>
+        """
+    }
 } 
